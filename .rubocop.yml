@@ -3,11 +3,17 @@ AllCops:
   NewCops: enable
 
 Layout/LineLength:
-  Max: 120
+  Max: 180
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Metrics/MethodLength:
+  Max: 20
+
 Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
