@@ -6,7 +6,7 @@ RSpec.describe KillEvent do
     it 'raises an error when an invalid death cause is sent' do
       killer = Player.new(2, 'killer')
       victim = Player.new(3, 'victim')
-      expect { KillEvent.new(killer, victim, 'invalid') }.to raise_error(KillEvent::InvalidEventError)
+      expect { described_class.new(killer, victim, 'invalid') }.to raise_error(described_class::InvalidEventError)
     end
   end
 end
