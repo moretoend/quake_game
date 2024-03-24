@@ -25,6 +25,20 @@ RSpec.describe Match do
     end
   end
 
+  describe '#update_player' do
+    it 'adds the player on the match' do
+      subject.add_player(2, 'player2')
+      subject.update_player(2, 'new name')
+      found_player = subject.players.index { |player| player.id == 2 }
+      expect(subject.players[found_player].name).to eq 'new name'
+    end
+
+    it 'raises an error if player does not exist' do
+      subject.add_player(1, 'player1')
+      expect { subject.add_kill_event(2, 1, 'MOD_SHOTGUN') }.to raise_error(described_class::ParticipantNotFoundError)
+    end
+  end
+
   describe '#add_kill_event' do
     it 'raises an error if killer does not exist' do
       subject.add_player(1, 'player1')

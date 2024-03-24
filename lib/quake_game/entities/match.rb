@@ -23,6 +23,11 @@ class Match
     @participants << Player.new(id, name) unless found_player
   end
 
+  def update_player(id, name)
+    found_player = find_participant_by_id(id)
+    found_player.name = name
+  end
+
   def add_kill_event(killer_id, victim_id, death_cause)
     killer = find_participant_by_id(killer_id)
     victim = find_participant_by_id(victim_id)
