@@ -5,7 +5,7 @@ class LogFileReaderAdapter
     @event_handlers = AVAILABLE_EVENTS.to_h { |event| [event, proc {}] }
   end
 
-  def sign_event(event, &block)
+  def subscribe_on(event, &block)
     @event_handlers[event] = block
   end
 
