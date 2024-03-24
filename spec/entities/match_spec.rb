@@ -19,9 +19,9 @@ RSpec.describe Match do
       expect(found_player).not_to be_nil
     end
 
-    it 'raises and error if Player already exist' do
+    it 'ignores if player already exist' do
       subject.add_player(2, 'player2')
-      expect { subject.add_player(2, 'player2') }.to raise_error(described_class::DuplicatedParticipantError)
+      expect { subject.add_player(2, 'player2') }.not_to change(subject.players, :count)
     end
   end
 

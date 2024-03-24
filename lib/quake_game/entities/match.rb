@@ -19,11 +19,8 @@ class Match
   end
 
   def add_player(id, name)
-    if @participants.index { |participant| participant.id == id }
-      raise DuplicatedParticipantError, "Participant with id #{id} already exists"
-    end
-
-    @participants << Player.new(id, name)
+    found_player = @participants.index { |participant| participant.id == id }
+    @participants << Player.new(id, name) unless found_player
   end
 
   def add_kill_event(killer_id, victim_id, death_cause)
