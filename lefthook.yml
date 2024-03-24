@@ -1,0 +1,13 @@
+pre-commit:
+  commands:
+    linter:
+      run: bundle exec rubocop
+    specs:
+      run: bundle exec rspec
+
+pre-push:
+  commands:
+    linter:
+      run: bundle exec rubocop
+    specs:
+      run: bundle exec rspec
