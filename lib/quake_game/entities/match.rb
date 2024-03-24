@@ -26,7 +26,7 @@ class Match
   def add_kill_event(killer_id, victim_id, death_cause)
     killer = find_participant_by_id(killer_id)
     victim = find_participant_by_id(victim_id)
-    raise WorldCannotBeKilledError, "World cannot be killed" if victim == @world
+    raise WorldCannotBeKilledError, 'World cannot be killed' if victim == @world
 
     killer.kill(victim)
     @kill_events << KillEvent.new(killer, victim, death_cause)
