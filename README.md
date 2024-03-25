@@ -2,6 +2,10 @@
 
 This is project focused on geneating a Quake Game model on play based on log input =)
 
+This basically how the business entities are organized
+
+![Quake Game ERM](https://github.com/moretoend/quake_game/blob/main/docs/quake-game-erm.png)
+
 For now, we're only capable on parsing logs to some report, but there future is here
 
 ## Installation
