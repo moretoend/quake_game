@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require_relative 'world'
+require_relative 'player'
+require_relative 'kill_event'
+
 class Match
   class DuplicatedParticipantError < StandardError; end
   class ParticipantNotFoundError < StandardError; end
