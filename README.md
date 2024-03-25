@@ -1,31 +1,59 @@
 # QuakeGame
 
-TODO: Delete this and the text below, and describe your gem
+This is project focused on geneating a Quake Game model on play based on log input =)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/quake_game`. To experiment with that code, run `bin/console` for an interactive prompt.
+For now, we're only capable on parsing logs to some report, but there future is here
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+This project is published on RubyGems ([check here](https://rubygems.org/gems/quake_game)), so it's very easy to install, you need to simply run:
 
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```
+gem install quake_game
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+After installing it, two commands will be available for you to use:
 
-## Development
+1. To generate a summary of matches based on a log file
+```
+quake_game_report <file path>
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+2. And another one to generate a death cause report for each match
+```
+quake_game_death_cause <file path>
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Both commands will print out a JSON with the matches summary and matches death causes summary respectively. Feel free to test it =)
 
-## Contributing
+## Want to contribute?
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/quake_game.
+You're welcome to contribute anyway you want.
+
+To open issues, you can access [our issues page](https://github.com/moretoend/quake_game/issues)
+
+Now, if you want to send some code, follow me to start:
+1. First of all, you need to have **git** and **ruby** installed.
+Don't know how to do it, you can go to [Git Docs](https://git-scm.com) and [Ruby Docs](https://ruby-doc.org/)
+
+2. Ok, with both installed, clone this repository
+```
+git clone git@github.com:moretoend/quake_game.git
+```
+
+3. Then, join the directory and install the gems
+```
+cd quake_game
+bundle install
+```
+
+4. Now you can open your favorite Editor and start coding it =)
+
+5. To run the tests you only need this command
+```
+bundle exec rspec
+```
+
+HAPPY CODING!!
