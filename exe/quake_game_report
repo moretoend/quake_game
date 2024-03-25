@@ -1,4 +1,26 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'quake_game'
+lib_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH << lib_dir unless $LOAD_PATH.include?(lib_dir)
+
+require 'json'
+require 'quake_game/adapters/log_file_reader_adapter'
+require 'quake_game/use_cases/game_summary_use_case'
+
+usage_message = 'USAGE: quake_game_report <file path>'
+
+if ARGV.first.nil?
+  puts "\nCommand needs an argument\n#{usage_message}\n\n"
+  exit
+end
+
+if ARGV.first == '-h' || ARGV.first == '--help'
+  puts "\n#{usage_message}\n\n"
+  exit
+end
+
+log_file_adapter = LogFileReaderAdapter.new
+game_summary_use_case = GameSummaryUseCase.new(log_file_adapter)
+
+puts JSON.pretty_generate game_summary_use_case.call(ARGV.first)
