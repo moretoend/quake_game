@@ -11,7 +11,7 @@ Metrics/BlockLength:
 
 Naming/VariableNumber:
   Exclude:
-    - 'spec/features/exe/quake_game_report_spec.rb'
+    - 'spec/features/exe/{quake_game_report,quake_game_death_cause}_spec.rb'
 
 Metrics/MethodLength:
   Max: 20
